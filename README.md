@@ -1,9 +1,5 @@
 # basic-auth
 
-# api-server
-
-# basic-api-server
-
 ## Author: Adrienne Frey
 ### Problem Domain
  modularization of provided code
