@@ -5,12 +5,13 @@ const { app } = require('../src/server');
 const request = supertest(app);
 
 describe('Auth Login/Logout', () => {
-  it('should create a new user', async => {
-    const response = await request.post('/api/v1/auth/signup').send({
-      email: 'upchh@example.com',
+  it('should create a new user', async () => {
+    const response = await request.post('/signup').send({
+      username: 'test',
       password: '12345678',
     });
-
-    expect(response.status).toBe(201);
-  })
-})
+    console.log (response.body);
+    expect(response.username).toBe('test');
+    // expect(response.status).toBe(403);
+  });
+});

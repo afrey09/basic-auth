@@ -11,11 +11,16 @@ const basicAuth = async (req, res, next) => {
   let [username, password] = decodedString.split(':');
 
   try {
-    const user = await userCollection.findOne({ where: { username: username });
+    const user = await userCollection.findOne({ where: { username: username }});
     const valid = await bcrypt.compare(password, user.password);
     if (valid) {
-      res.status(200).json(user);
-    } else {
+      req.user = user;
+      next();
+    } 
+    else {
       throw new Error('Invalid Credentials');
     }
-  } catch (error) {
+  } catch (error) { res.status(403).send('Invalid Login'); }
+};
+
+module.exports = basicAuth;
