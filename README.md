@@ -27,7 +27,7 @@ Describe any tests that you did not complete, skipped, etc N/A
 
 ## UML
 
-![Lab 6](./assets/lab6.png)
+![Lab 6](assets/lab6.png)
 
 ## Collaborators
 
